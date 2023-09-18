@@ -1,5 +1,13 @@
 # Week 4 Discussion Assignment
 
+
+###
+### Grade 
+3/3 
+- Really nice progress from last week to this week! So glad to hear you are feeling more confident. 
+- Your point about making a game plan for your code in advance is a really good one and I will try to remember to bring that up in class. 
+###
+
 Quantitative Analysis
 - The quantitative analysis I applied for this assignment was first selecting all data from the given time window. For 1 wk out, I had selected data from all years from 1989-2023 of the flows between Sept 17-23 for wk 1 and Sept 24-30 for wk 2. I set outlier limits on the data of min = 50 and max = 350. This was done by generally intuition, but also confirmed by running print functions of data in these ranges and seeing that the data in these outlier ranges was usually < about 2% of data, so I removed these outliers. 
 - After having python retrieve these values within the requested conditions, I took the average of each day range and found my prediction for that week.

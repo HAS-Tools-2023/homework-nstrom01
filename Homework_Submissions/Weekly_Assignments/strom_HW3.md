@@ -1,3 +1,13 @@
+
+###
+### Grade 
+3/3 
+- This assignment was hard for a lot of people. We'll discuss more this week when I'm back. Hopefully you are feeling more on track after assignment 4. 
+
+- Also please make sure to add a header and some more formatting for your markdown file to make it easier to read. I'll also talk about this in class on Tuesday. 
+###
+
+
 # Week 3 Forecast explanation
 The forecast using python this week was a bit confusing and difficult for me. I was able to run some of the commands, but it took a few hours of messing around to realize I was getting nowhere and I started to run out of time. 
 
