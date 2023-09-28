@@ -1,4 +1,11 @@
 # Week 5 Assignment: NStrom
+
+### Grade
+3/3 -- its okay if you use intuition this week. The main reason for having you do python is so that you can get as much practice as possible working with arrays. 
+- Great reflections. I'm glad to hear you feel you are making progress. 
+- Honestly with coding looking at other peoples codes is one of the best ways to learn so don't worry if you are consulting other students at this point. This week was a big challenge because I asked you all to write a code from scratch and not from my starter. 
+###
+
 ## Forecast 
 - I will use my free pass that I received from winning the forecast prediction last week. 
 
