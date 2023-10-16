@@ -3,6 +3,14 @@
 # Week 6 Forecast - Method and Summary
 ### * To view the data in a coherent layout, view through the text editor interface and not through Preview * 
 
+### Grade
+3/3: Nice job.  
+- Is this text at the top a question or a comment? Happy to discuss in class if its a questions please bring it up. 
+- Very thoughtful job on your foreacst I like your approach. 
+- Note that copying and pasting in blocks of numbers doesn't format very well. An alternate approach is to take a screenshot of the table form VS code and then just put the image into your markdown. 
+###
+
+### Forecast Summary
 - I made this forecast by using pandas functions for the following methods. First, I found the average of the past two weeks (September 27 - October 6) of the daily flow values. Next I created a pandas df with an avg of the same chunk of dates for each year of the historical flow data all the way back to 1989. With the df of historical averaged flow values, I identified  all years that had a flow that was within +/- 40% of the average flow found for the 2023 Sep27-Oct6 average. 
 
 - I used this list of years to find the histroical average from this chunk for the flow in the 1 week out time frame from todays submission and the historical average of the 2 week out time frame and used these values as my prediction for flow.
