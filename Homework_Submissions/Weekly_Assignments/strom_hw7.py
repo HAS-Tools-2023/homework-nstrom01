@@ -7,17 +7,54 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
+
+
 plt.style.use('dark_background')
 
 
 #%%
 
 ## Import the flow data to use
-data = pd.read_table("Wk8_Verde_Data.txt",  sep='\t', skiprows=30, names=['agency_cd', 'site_no', 'datetime', 'flow', 'code'])
-data[["year", "month", "day"]] = data["datetime"].str.split("-", expand=True)
+#data = pd.read_table("Wk8_Verde_Data.txt",  sep='\t', skiprows=30, names=['agency_cd', 'site_no', 'datetime', 'flow', 'code'])
+#data[["year", "month", "day"]] = data["datetime"].str.split("-", expand=True)
+#data['year'] = data['year'].astype(int)
+#data['month'] = data['month'].astype(int)
+#data['day'] = data['day'].astype(int)
+
+
+#%%
+
+# Set the file name and path to where you have stored the data
+filename = 'Wk8_Verde_Data.txt'
+filepath = os.path.join('/Users/NStrom_School/Desktop/HAS_Tools/homework-nstrom01/Homework_Working', 'Wk8_Verde_Data.txt')
+print(os.getcwd())
+print(filepath)
+
+# %%
+# DON'T change this part -- this creates the lists you 
+# should use for the rest of the assignment
+# no need to worry about how this is being done now we will cover
+# this in later sections. 
+
+#Read the data into a pandas dataframe
+data=pd.read_table(filepath, sep = '\t', skiprows=31,
+        names=['agency_cd', 'site_no', 'datetime', 'flow', 'code']
+        )
+
+
+#%% (1) creating flow_data
+# Expand the dates to year month day
+
+data[["year", "month", "day"]] =data["datetime"].str.split("-", expand=True)
 data['year'] = data['year'].astype(int)
 data['month'] = data['month'].astype(int)
 data['day'] = data['day'].astype(int)
+
+# Make a numpy array of this data
+flow_data = data[['year', 'month','day', 'flow']].to_numpy()
+
+# Getting rid of the pandas dataframe since we wont be using it this week
 
 
 
