@@ -1,6 +1,12 @@
 
 # Homework 7 - Plotting - Nathan Strom 
 
+### Grade
+3/3: Your plots are beautiful! I agree it does take a really long time to set them up especially at first but the good news is once you start getting a library of plots to start from it gets easier and easier.  
+
+We will definitely get more practice with loops throughout the course. 
+###
+
 ## Forecast Method Summary
 
 The forecast prediction values I got were
