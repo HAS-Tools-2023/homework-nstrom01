@@ -1,6 +1,12 @@
 
 # WEEK 8: Python Skills -- Nathan Strom
 
+### Grade
+3/3: Great job!
+- Your plots look great an your explanations were really clear. 
+- Your reflection also makes a lot of sense. I will tell you that I almost never code without pulling up something I have done in the past or looking up some new functionality I need. In time there are parts that you will be able to write yourself from memory but expecting it to be completely memorized is a very high bar. 
+###
+
 ## Forecast Predictions
 
 - 1 week out: 99.0 cfs
