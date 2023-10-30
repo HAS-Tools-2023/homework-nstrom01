@@ -14,6 +14,14 @@ data = pd.read_table('Verde_flow_wk8.txt', sep='\t', skiprows=30,
 
 
 #%%
+
+x = data[(data.index.year == 2022) & ((data.index.month == 10) | (data.index.month == 11))]
+
+
+
+#%%
+# test2=datai[(datai.index.month == 10) & (datai.index.year == 2023)] # CODE borrowed by Tong 
+#%%
 OctNov_2023_flow = data.loc['2023'].loc['2023-10-01':'2023-11-10']['flow']
 OctNov_2022_flow = data.loc['2022'].loc['2022-10-01':'2022-11-10']['flow']
 OctNov_2021_flow = data.loc['2021'].loc['2021-10-01':'2021-11-10']['flow']
@@ -35,9 +43,9 @@ ax[0,1].title.set_text('2022')
 ax[1,0].title.set_text('2021')
 ax[1,1].title.set_text('2020')
 
-for row in ax:
-    for subplot in row:
-        subplot.set_xticklabels([]) # removing the day labels b/c they are too cramped
+#for row in ax:
+    #for subplot in row:
+        #subplot.set_xticklabels([]) # removing the day labels b/c they are too cramped
 
 plt.tight_layout()
 
