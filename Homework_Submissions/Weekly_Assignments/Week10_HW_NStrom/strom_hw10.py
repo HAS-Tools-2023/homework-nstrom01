@@ -235,36 +235,7 @@ Plot_an_x_and_y(daymet_df)
 # %%
 # daymet_df.groupby(['day'])[['flow']].max()
 # BROKEN FUNCTION >>> REPLACE W/ CODE RUNNING BELOW
-def avg_min_max_plotter(data_frame, group_by = 'yday', variable_of_interest = 'srad (W/m^2)'):
 
-    max_data = daymet_df.groupby([group_by])[[variable_of_interest]].max()
-    min_data = daymet_df.groupby([group_by])[[variable_of_interest]].min()
-    avg_data = daymet_df.groupby([group_by])[[variable_of_interest]].min()
-
-
-    xMx = Oct_daily_MAX['day']
-    yMx = Oct_daily_MAX['flow']
-    xMn = Oct_daily_MIN['day']
-    yMn = Oct_daily_MIN['flow']
-    xAv = Oct_daily_flow['day']
-    yAv = Oct_daily_flow['flow']
-    
-    fig, ax = plt.subplots()
-    ax.scatter(xAv, yAv, label='Daily Avg Flow', marker='.',color = 'red',)
-    ax.scatter(xMx, yMx, label='Daily Max Flow', marker ='.', color='green')
-    ax.scatter(xMn, yMn, label='Daily Min Flow', marker ='.', color='yellow')
-
-    ax.plot(xAv, yAv, linestyle='-', color='red')
-    ax.plot(xMx, yMx, linestyle='-', color='green')
-    ax.plot(xMn, yMn, linestyle='-', color='yellow')
-
-
-    ax.legend()
-    ax.set_xlabel('Day in October')
-    ax.set_ylabel('Flow (CFS)')
-    ax.set_title('Average, Min, & Max Flow for days in October: data from 1989 - 2022')
-
-avg_min_max_plotter(daymet_df)
 # %% Defining Variables
 max_srad = daymet_df.groupby(['yday'])[['srad (W/m^2)']].max()
 min_srad = daymet_df.groupby(['yday'])[['srad (W/m^2)']].min()
