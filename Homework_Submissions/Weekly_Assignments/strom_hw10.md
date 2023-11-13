@@ -1,5 +1,9 @@
 
+
 # Week 10 Assignment 
+
+### Grade: 
+3/3: Nice work. Very glad to hear that putting it all together was useful and that you are getting the hang of functions. They are indeed very powerful!  The loop/function/loop exercise was a tricky one for everyone but it sounds like you got it figured out. 
 
 Write a short markdown reflecting on (1) What you learned, (2) things you still find confusing or couldn't solve.
 
