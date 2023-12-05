@@ -7,12 +7,16 @@ from datetime import datetime
 
 #%%
 
+
 """
 Enter the Monday date of the forecast week of interest.
 A prediction of the average flow for the entered week and the following week will print.
 """
 forecast_date_week1 = '2023-11-27'
 
+#LC reflecting on your comments. In my opinion your code would be easier to read without this outer function. Instead I would just definite the inner functions up top and then do the actions of this outer function (ie. find_streamflow_prediction_from_usgs_stream) within the main script.  
+
+# This is not to say that functions calling functions is a no-go in general (and if this class went for another semester we would start talking about building classes) but in this case because everything just ended up being one big function it made it a bit more confusing in my opinion. 
 
 def find_streamflow_prediction_from_usgs_stream(site_number='09506000',
                                                 data_start_date='1989-01-01',
@@ -65,6 +69,7 @@ def find_streamflow_prediction_from_usgs_stream(site_number='09506000',
         index_col=['datetime'])
 
     # Setting the dates needed for dataframes from the input wk1 date
+    # LC - Nice job useing the pd.DateOffset function here this is a very clean way to do this!
     wk1_predict_date = pd.to_datetime(wk1_predict_date)
     pst_2wk_strt_d8 = wk1_predict_date - pd.DateOffset(days=15)
     last_day_d8 = wk1_predict_date - pd.DateOffset(days=1)
@@ -74,6 +79,7 @@ def find_streamflow_prediction_from_usgs_stream(site_number='09506000',
     wk2_predict_yr = wk2_predict_d8.year
 
     # Making datasets that will be used for calc later in code
+    # LC its usually best practice to put all of your functions at the top of a script rather than having them be distributed throughout. In this case you could put them all at the top of this outer function. 
     def find_yearly_flow_mean(df=data, start_date=pst_2wk_strt_d8,
                               end_date=last_day_d8):
         """
@@ -90,6 +96,7 @@ def find_streamflow_prediction_from_usgs_stream(site_number='09506000',
         Description: Calculates the yearly mean flow for a given date range from a DataFrame. 
         Groups by year, computes mean flow, and returns a DataFrame.
         """
+        # LC Tese next few lines could probably be variables you skip defining since they are only used at most twice and because `start_date.month` is actually more interpretable than `strt_mnth`
         strt_mnth = start_date.month,
         end_mnth = end_date.month
         strt_day = start_date.day
@@ -132,6 +139,10 @@ def find_streamflow_prediction_from_usgs_stream(site_number='09506000',
                                  low_bound)]).index.tolist()
 
     # Taking DFs from above function and finding a forecast w/in input StdDev
+    # LC Its not a good idea when you setup your function to have default values that are equal to some variable inside your script (e.g. week_df = wk1_hist_mean_df) this will break if you try to run it in another setting). 
+    # You have two options to avoid this. 
+    # 1. You can either not define default values when you setup your function in which case your function definition would look like this: def find_flow_forecast_by_week(week_df, year_list). If you do it this way the user has to put in values for those funciton arguments when they call the function. This is a totally fine expectation. 
+    # 2. you can define default options but then they should be actual values not variables. You did this in your first fuction when you said site_number='09506000'
     def find_flow_forecast_by_week(
             week_df=wk1_hist_mean_df, year_list=year_list):
         """
@@ -182,7 +193,7 @@ def find_streamflow_prediction_from_usgs_stream(site_number='09506000',
                                       index=[datetime(wk2_predict_yr, 1, 1)])
         wk2_predict_df.index.name = 'year'
 
-        plt.style.use('seaborn-v0_8-darkgrid')
+        #plt.style.use('seaborn-v0_8-darkgrid')
         wk1_hist_mean_df['flow'].plot(label='Historical week of ' +
                                       (wk1_predict_date.strftime('%m-%d')),
                                       color='red')

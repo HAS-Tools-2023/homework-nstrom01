@@ -1,6 +1,17 @@
 
 # WEEK 13 Reflection  
 
+### Grade
+9/9
+Really nice work on this! Your organization and structure has improved greatly and I found this new version to be much easier to read. Your use of functions was really great and I like how you incorporated datetime functionality. 
+
+I left you some comments throughout your code with suggestions for where you can make it a bit more concise. You are correct though figuring out how to organize and when to define variables is a bit of an art form and you will get better with practice. (Working with chatGPT is its own art form and its totally up to you whether you find it to be a value added or not and under what conditions)
+
+Three picture comments: 
+1. I would not suggest wrapping the whole thing in a function because it actually makes it a bit harder to parse and understand. 
+2. All the functions you made were great! Just be careful about setting default values in your function definitions that are actually variables. That makes it hard to use your functions other places. 
+3. really nice job on documentation in your functions. In the future definite all your functions at the top of the script.
+
 ## Changes Made on Submitted Code
 I made the following changes on this weeks code from the last version
 - Style & Readability: I adhered to PEP8 style guide on this version. I used a linter and ensured specific things such as character line length, spacing, and indentation were followed. This helped readability, however some of the linter suggestions seemed a bit unnecessary as in they did not seem to improve readability, but I followed them for good practice. 
